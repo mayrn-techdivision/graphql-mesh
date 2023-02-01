@@ -17,8 +17,25 @@ describe('PostgresGeoDB', () => {
   });
   it('should give correct response for example queries', async () => {
     const result = await mesh.execute(config.documents[0].document!, {});
-    expect(result?.data?.allCities?.nodes?.[0]?.countrycode).toBeTruthy();
-    expect(result?.data?.allCities?.nodes?.[0]?.developers?.[0]?.login).toBeTruthy();
+    if (result.errors?.length) {
+      throw result.errors[0];
+    }
+    expect(result).toMatchObject({
+      data: {
+        allCities: {
+          nodes: [
+            {
+              countrycode: expect.any(String),
+              developers: [
+                {
+                  login: expect.any(String),
+                },
+              ],
+            },
+          ],
+        },
+      },
+    });
   });
   afterAll(() => {
     mesh?.destroy();
