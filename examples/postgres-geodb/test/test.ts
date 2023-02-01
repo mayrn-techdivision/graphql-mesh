@@ -1,22 +1,28 @@
-const { findAndParseConfig } = require('@graphql-mesh/cli');
-const { getMesh } = require('@graphql-mesh/runtime');
-const { basename, join } = require('path');
+import { join } from 'path';
+import { findAndParseConfig } from '@graphql-mesh/cli';
+import { ProcessedConfig } from '@graphql-mesh/config';
+import { getMesh, MeshInstance } from '@graphql-mesh/runtime';
 
-const { printSchema, lexicographicSortSchema } = require('graphql');
-
-const config$ = findAndParseConfig({
-  dir: join(__dirname, '..'),
-});
-const mesh$ = config$.then(config => getMesh(config));
 jest.setTimeout(30000);
 
+let config: ProcessedConfig;
+let mesh: MeshInstance;
+
 describe('PostgresGeoDB', () => {
+  beforeAll(async () => {
+    config = await findAndParseConfig({
+      dir: join(__dirname, '..'),
+    });
+    process.env.DEBUG = '1';
+    mesh = await getMesh(config);
+    process.env.DEBUG = undefined;
+  });
   it('should give correct response for example queries', async () => {
-    const { documents } = await config$;
-    const { execute } = await mesh$;
-    const result = await execute(documents[0].document);
+    const result = await mesh.execute(config.documents[0].document!, {});
     expect(result?.data?.allCities?.nodes?.[0]?.countrycode).toBeTruthy();
     expect(result?.data?.allCities?.nodes?.[0]?.developers?.[0]?.login).toBeTruthy();
   });
-  afterAll(() => mesh$.then(mesh => mesh.destroy()));
+  afterAll(() => {
+    mesh.destroy();
+  });
 });
