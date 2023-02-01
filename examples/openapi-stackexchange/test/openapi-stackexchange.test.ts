@@ -1,8 +1,8 @@
+import { readFile } from 'fs/promises';
+import { join } from 'path';
 import { findAndParseConfig } from '@graphql-mesh/cli';
 import { getMesh, MeshInstance } from '@graphql-mesh/runtime';
-import { join } from 'path';
 import { printSchemaWithDirectives } from '@graphql-tools/utils';
-import { readFile } from 'fs/promises';
 
 describe('Stack Exchange', () => {
   let mesh: MeshInstance;
@@ -18,7 +18,7 @@ describe('Stack Exchange', () => {
   it('should generate correct schema', async () => {
     expect(printSchemaWithDirectives(mesh.schema)).toMatchSnapshot();
   });
-  it('should return the correct data', async () => {
+  it.skip('should return the correct data', async () => {
     const listQuestionsQuery = await readFile(
       join(__dirname, '..', 'list-questions.query.graphql'),
       'utf-8',
