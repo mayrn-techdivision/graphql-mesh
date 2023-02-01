@@ -11,8 +11,8 @@
     "@graphql-mesh/cli": "0.82.13",
     "@graphql-mesh/json-schema": "0.37.7",
     "@graphql-mesh/plugin-live-query": "0.2.6",
-    "@whatwg-node/fetch": "0.6.2",
-    "@whatwg-node/router": "0.1.7",
+    "@whatwg-node/fetch": "0.6.5",
+    "@whatwg-node/router": "0.1.10",
     "graphql": "16.6.0"
   },
   "devDependencies": {

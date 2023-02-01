@@ -32,7 +32,7 @@
     "@graphql-mesh/cross-helpers": "0.3.1",
     "@graphql-mesh/types": "0.89.5",
     "@graphql-mesh/utils": "0.43.6",
-    "@graphql-tools/utils": "9.1.4",
+    "@graphql-tools/utils": "9.2.0",
     "@json-schema-tools/meta-schema": "1.7.0",
     "@whatwg-node/fetch": "^0.6.0",
     "json-pointer": "0.6.2",

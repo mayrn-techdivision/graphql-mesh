@@ -40,7 +40,7 @@
     "@graphql-mesh/string-interpolation": "0.4.2",
     "@graphql-mesh/types": "0.89.5",
     "@graphql-mesh/utils": "0.43.6",
-    "@graphql-tools/utils": "9.1.4",
+    "@graphql-tools/utils": "9.2.0",
     "graphql-scalars": "1.20.1",
     "pascal-case": "3.1.2",
     "thrift": "0.17.0",

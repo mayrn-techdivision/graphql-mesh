@@ -35,11 +35,11 @@
     "@graphql-mesh/store": "0.9.6",
     "@graphql-mesh/types": "0.89.5",
     "@graphql-mesh/utils": "0.43.6",
-    "@graphql-tools/delegate": "9.0.24",
-    "@graphql-tools/schema": "9.0.14",
-    "@graphql-tools/stitch": "8.7.38",
-    "@graphql-tools/stitching-directives": "2.3.27",
-    "@graphql-tools/utils": "9.1.4",
+    "@graphql-tools/delegate": "9.0.25",
+    "@graphql-tools/schema": "9.0.15",
+    "@graphql-tools/stitch": "8.7.39",
+    "@graphql-tools/stitching-directives": "2.3.28",
+    "@graphql-tools/utils": "9.2.0",
     "tslib": "^2.4.0"
   },
   "publishConfig": {
