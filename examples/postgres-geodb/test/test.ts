@@ -13,9 +13,7 @@ describe('PostgresGeoDB', () => {
     config = await findAndParseConfig({
       dir: join(__dirname, '..'),
     });
-    process.env.DEBUG = '1';
     mesh = await getMesh(config);
-    process.env.DEBUG = undefined;
   });
   it('should give correct response for example queries', async () => {
     const result = await mesh.execute(config.documents[0].document!, {});
@@ -23,6 +21,6 @@ describe('PostgresGeoDB', () => {
     expect(result?.data?.allCities?.nodes?.[0]?.developers?.[0]?.login).toBeTruthy();
   });
   afterAll(() => {
-    mesh.destroy();
+    mesh?.destroy();
   });
 });
