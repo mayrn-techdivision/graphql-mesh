@@ -1,0 +1,6 @@
+---
+"@graphql-mesh/odata": patch
+---
+dependencies updates:
+  - Updated dependency [`@graphql-tools/delegate@9.0.25` ↗︎](https://www.npmjs.com/package/@graphql-tools/delegate/v/9.0.25) (from `9.0.24`, in `dependencies`)
+  - Updated dependency [`@graphql-tools/utils@9.2.0` ↗︎](https://www.npmjs.com/package/@graphql-tools/utils/v/9.2.0) (from `9.1.4`, in `dependencies`)
