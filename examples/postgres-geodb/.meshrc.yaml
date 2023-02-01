@@ -11,8 +11,6 @@ sources:
       graphql:
         endpoint: https://api.github.com/graphql
         source: https://docs.github.com/public/schema.docs.graphql
-        schemaHeaders:
-          Authorization: bearer {env.GH_ACCESS_TOKEN}
         operationHeaders:
           Authorization: bearer {env.GH_ACCESS_TOKEN}
     transforms:
